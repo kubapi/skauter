@@ -1,0 +1,25 @@
+
+# Assumptions
+# We scrape football player profile not a team profile
+# We first scrape transfermarket for players born 99, 00, 01, 02, 03, 04 (6 age groups) 
+# We get only ones that are playing in polish league (depending on the number of players)
+# Then we look for this players in the PZPN API and manually verify
+# Then we scrape all matches.
+
+# Relacyjna baza danych (co jeśli mam zawodnika w wieku 17 a co jeśli 18 nie mogę porównywać (więc n-1 sezon))
+# Przedział wiekowy (u17 - u23)
+
+# Faza eksepryemntownaia (playwrigth co to jest?)
+# Playwright is a testing and automation framework that can automate web browser interactions. 
+# Simply put, you can write code that can open a browser. 
+# This means that all the web browser capabilities are available for use. 
+# The automation scripts can navigate to URLs, enter text, click buttons, extract text, etc. 
+# The most exciting feature of Playwright is that it can work with multiple pages at the same time, without getting blocked or having to wait for operations to complete in any of them.
+
+# Dane "czasowe" - dane w zwykłej 
+
+# Opisać w jaki sposób zostąły zebrane dane - napisać o nieprzejstej sytuacji 
+# Czy piłkarze wyrazili zgodę na udział w badnaiu
+# Porównać z wywiadami 
+# Rozibieność miedzy danymi ilościowymi a jakościowymi 
+# Z jakościowych wybrać wskaźniki i zrobić z tego hipotezy
