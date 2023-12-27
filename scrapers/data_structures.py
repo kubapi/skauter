@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum
-from typing import Dict, Optional
+from typing import Optional
 
 class MatchResult(Enum):
     WIN = "win"
@@ -10,30 +10,43 @@ class MatchResult(Enum):
 @dataclass
 class PlayerMatchData:
     player_id: str
-    team_id: str 
-    league_id: str
-    round_number: int
-    result: MatchResult
+
+    team_name: str 
+    rival_name: str
+    round: int
+    year: int
+
+    date: str
+
     score_team: int
     score_rival: int
-    minutes_played: int
-    nth_season: int
+    result: MatchResult
 
     team_position_in_league: int
-    rival_position_in_league: int
     team_points_in_league: int
-    rival_points_in_league: int
+    
+    starting_position: str
 
-    goals_scored: int = 0
+    minutes_played: int
+    minute_in: str
+    minute_out: str
+
+    played: bool = False
+    in_first_team: bool = False
+    on_bench: bool = False
+
+    goals: int = 0
+    asists: int = 0
+    own_goals: int = 0
+
+    captain: bool = False
+
     received_yellow_card: bool = False
     received_two_yellows_cards: bool = False
     received_red_cards: bool = False
-    position_difference: Optional[int] = None  
-    point_difference: Optional[int] = None
 
     def __post_init__(self):
         self.position_difference = self.rival_position_in_league - self.team_position_in_league
-        self.point_difference = self.rival_points_in_league - self.team_points_in_league
 
 @dataclass
 class PlayerMarketValue:
@@ -43,9 +56,3 @@ class PlayerMarketValue:
     url: str
     country_name: str
     market_value: int = 0
-
-@dataclass
-class TableData:
-    league_id: str
-    round_number: int
-    league_table: Dict[int, int]
